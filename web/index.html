@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <title>Purchase order desk · Periferia</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-lockup"><div class="brand-mark">p</div><div><strong>periferia</strong><span>operations studio</span></div></div>
+        <div class="workspace-label">WORKSPACE</div>
+        <button class="nav-item active" type="button"><span class="nav-icon">▤</span> Purchase orders <span class="nav-count">06</span></button>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section-head"><span>TEST CASES</span><span class="live-dot"></span></div>
+        <div class="case-list" id="case-list"></div>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-status"><span class="status-check">✓</span><div><strong>Simulated SAP</strong><span id="provider-status">Connecting…</span></div><span class="status-pill">READY</span></div>
+        <div class="profile-row"><div class="avatar">HA</div><div><strong>Human analyst</strong><span>Review &amp; approval</span></div><button class="icon-button" type="button" aria-label="Options">···</button></div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="crumb"><span>Operations</span><span class="slash">/</span><strong>Purchase order assistant</strong></div>
+          <div class="topbar-actions"><span class="environment-tag"><span class="live-dot"></span> SANDBOX</span><button id="new-chat" class="new-chat" type="button"><span>＋</span> New session</button></div>
+        </header>
+
+        <section class="chat-layout">
+          <div class="conversation-column">
+            <div class="conversation-heading">
+              <div><div class="eyebrow">PROCUREMENT · SAP SIMULATION</div><h1>Purchase order desk</h1><p>Review request packages, validate controls and prepare a traceable SAP order.</p></div>
+              <div class="session-meta"><span class="session-avatar">AI</span><div><strong>PO assistant</strong><span><i></i> Ready to help</span></div></div>
+            </div>
+
+            <div class="conversation" id="conversation" aria-live="polite">
+              <div class="welcome-card" id="welcome-card">
+                <div class="welcome-icon">✳</div>
+                <div class="welcome-kicker">YOUR PROCUREMENT COPILOT</div>
+                <h2>Let’s get this order right.</h2>
+                <p>I’ll check the request against supplier, approver and cost-center controls, then prepare the order for review.</p>
+                <div class="starter-row"><span class="starter-label">TRY A REQUEST</span><button class="starter-chip" data-prompt="Process req-001" type="button">Process req-001 <span>↗</span></button><button class="starter-chip" data-prompt="Process req-004 and show me the quote variance. Do not create until I confirm." type="button">Review req-004 <span>↗</span></button></div>
+              </div>
+              <div id="turns"></div>
+              <div id="thinking" class="thinking hidden"><span class="thinking-dots"><i></i><i></i><i></i></span><span>Reviewing request and controls</span></div>
+            </div>
+
+            <div class="composer-wrap">
+              <div class="quick-actions"><button class="quick-chip" data-prompt="Process req-001" type="button">＋ Process request</button><button class="quick-chip" data-prompt="Show me the available request cases" type="button">⌕ Browse cases</button></div>
+              <form id="chat-form" class="composer">
+                <textarea id="message-input" rows="1" placeholder="Ask me to process a purchase request…" aria-label="Message the purchase order assistant"></textarea>
+                <div class="composer-bottom"><div class="composer-hint"><span class="shortcut">↵</span> to send <span class="hint-divider">·</span> I check every value against the fixtures</div><button id="send-button" class="send-button" type="submit" aria-label="Send message"><span>Send</span><b>↗</b></button></div>
+              </form>
+              <div class="footnote"><span class="lock">▣</span> Fixture data only · No real SAP connection · You stay in control of every exception</div>
+            </div>
+          </div>
+
+          <aside class="context-panel">
+            <div class="context-title"><div><span class="eyebrow">AT A GLANCE</span><h2>Control room</h2></div><span class="context-menu">···</span></div>
+            <div class="readiness-card"><div class="readiness-heading"><span>FLOW STATUS</span><span class="pulse"></span></div><div class="readiness-value">Ready<span>to review</span></div><div class="readiness-line"><span></span></div><p>Every order is checked before it reaches the simulated SAP adapter.</p></div>
+            <div class="context-section"><div class="context-section-title"><span>VALIDATION MATRIX</span><span>10 RULES</span></div>
+              <div class="matrix-row"><span class="matrix-icon">✓</span><div><strong>Supplier &amp; approval</strong><span>Active supplier · authorized approver</span></div></div>
+              <div class="matrix-row"><span class="matrix-icon">✓</span><div><strong>Spend controls</strong><span>Cost center · subarea · approval limit</span></div></div>
+              <div class="matrix-row"><span class="matrix-icon">✓</span><div><strong>Quote &amp; amount</strong><span>Variance · quantity × unit price</span></div></div>
+              <div class="matrix-row"><span class="matrix-icon">✓</span><div><strong>Exception checks</strong><span>Tax code · dates · retroactive invoices</span></div></div>
+            </div>
+            <div class="context-section outputs-section"><div class="context-section-title"><span>GENERATED ARTIFACTS</span><span>ON DISK</span></div>
+              <div class="artifact-row"><span class="file-icon txt">TXT</span><div><strong>Approval evidence</strong><span>SHA-256 verified</span></div><span class="artifact-check">✓</span></div>
+              <div class="artifact-row"><span class="file-icon json">JSON</span><div><strong>Traceability map</strong><span>Source for every field</span></div><span class="artifact-check">✓</span></div>
+              <div class="artifact-row"><span class="file-icon csv">CSV</span><div><strong>Control ledger</strong><span>Every create attempt</span></div><span class="artifact-check">✓</span></div>
+            </div>
+            <div class="human-note"><span class="human-icon">✳</span><p><strong>Human approval stays human.</strong><br />I’ll pause and ask before any confirmed exception is sent to simulated SAP.</p></div>
+            <div class="panel-footer"><span>CHALLENGE 03</span><span>BUILT FOR PERIFERIA IT</span></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
